@@ -1,0 +1,9 @@
+{
+	"name": "ws-adf-democlase4-datapath",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "fca8d02e-8e4b-4810-846f-1ccbb030fb51",
+		"tenantId": "7d1e4c5f-5ab6-491f-ae1b-ecb05599107f"
+	}
+}
