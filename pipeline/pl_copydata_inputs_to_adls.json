@@ -497,7 +497,7 @@
 						"referenceName": "ds_fs_csv_democlase4",
 						"type": "DatasetReference",
 						"parameters": {
-							"file_name": "2021.csv"
+							"file_name": "transacciones.csv"
 						}
 					}
 				],
@@ -508,7 +508,7 @@
 						"parameters": {
 							"container": "datalake",
 							"path": "bronze/file_system/csv",
-							"file_name": "2021.csv"
+							"file_name": "transacciones.csv"
 						}
 					}
 				]
