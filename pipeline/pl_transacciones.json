@@ -95,7 +95,7 @@
 					}
 				},
 				"linkedServiceName": {
-					"referenceName": "ls_ws_adb_democlase5",
+					"referenceName": "ls_ws_adb_test",
 					"type": "LinkedServiceReference"
 				}
 			}
