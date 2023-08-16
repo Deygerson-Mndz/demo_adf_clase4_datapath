@@ -1,0 +1,91 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ws-adf-democlase4-datapath"
+		},
+		"ls_adls_democlase4_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_adls_democlase4'"
+		},
+		"ls_azsqldb_democlase4_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_azsqldb_democlase4'"
+		},
+		"ls_blob_democlase4_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_blob_democlase4'"
+		},
+		"ls_fs_democlase4_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'ls_fs_democlase4'"
+		},
+		"ls_adls_democlase4_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdemoclase4datapath.dfs.core.windows.net/"
+		},
+		"ls_fs_democlase4_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "C:\\data_adf"
+		},
+		"ls_fs_democlase4_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "deygerson.mendez_blu"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ws-adf-democlase4-datapath_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_adls_democlase4_accountKey": {
+						"value": "[parameters('ls_adls_democlase4_accountKey')]"
+					},
+					"ls_azsqldb_democlase4_connectionString": {
+						"value": "[parameters('ls_azsqldb_democlase4_connectionString')]"
+					},
+					"ls_blob_democlase4_connectionString": {
+						"value": "[parameters('ls_blob_democlase4_connectionString')]"
+					},
+					"ls_fs_democlase4_password": {
+						"value": "[parameters('ls_fs_democlase4_password')]"
+					},
+					"ls_adls_democlase4_properties_typeProperties_url": {
+						"value": "[parameters('ls_adls_democlase4_properties_typeProperties_url')]"
+					},
+					"ls_fs_democlase4_properties_typeProperties_host": {
+						"value": "[parameters('ls_fs_democlase4_properties_typeProperties_host')]"
+					},
+					"ls_fs_democlase4_properties_typeProperties_userId": {
+						"value": "[parameters('ls_fs_democlase4_properties_typeProperties_userId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
