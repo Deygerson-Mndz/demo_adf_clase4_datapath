@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "File System to Bronze",
+				"name": "On premise to bronze",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -67,6 +67,37 @@
 						}
 					}
 				]
+			},
+			{
+				"name": "bronze to silver",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "On premise to bronze",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/deygerson_mendez@outlook.com/Transformación de Datos con Azure Databricks",
+					"baseParameters": {
+						"monto": "2500",
+						"id_empresa": "1"
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_ws_adb_democlase5",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
