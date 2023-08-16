@@ -90,8 +90,14 @@
 				"typeProperties": {
 					"notebookPath": "/Users/deygerson_mendez@outlook.com/Transformación de Datos con Azure Databricks",
 					"baseParameters": {
-						"monto": "2500",
-						"id_empresa": "1"
+						"monto": {
+							"value": "@pipeline().parameters.monto",
+							"type": "Expression"
+						},
+						"id_empresa": {
+							"value": "@pipeline().parameters.id_empresa",
+							"type": "Expression"
+						}
 					}
 				},
 				"linkedServiceName": {
@@ -100,6 +106,14 @@
 				}
 			}
 		],
+		"parameters": {
+			"monto": {
+				"type": "string"
+			},
+			"id_empresa": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
