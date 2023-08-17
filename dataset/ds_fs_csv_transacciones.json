@@ -1,0 +1,30 @@
+{
+	"name": "ds_fs_csv_transacciones",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_fs_democlase4",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "File System"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "transacciones.csv"
+			},
+			"columnDelimiter": "|",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "ID_PERSONA|ID_EMPRESA|MONTO|FECHA",
+				"type": "String"
+			}
+		]
+	}
+}
