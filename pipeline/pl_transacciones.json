@@ -63,11 +63,8 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ds_fs_csv_democlase4",
-						"type": "DatasetReference",
-						"parameters": {
-							"file_name": "transacciones.csv"
-						}
+						"referenceName": "ds_fs_csv_transacciones",
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
