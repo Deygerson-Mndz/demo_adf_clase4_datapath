@@ -43,12 +43,48 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "ID_PERSONA|ID_EMPRESA|MONTO|FECHA",
+									"name": "ID_PERSONA",
 									"type": "String",
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "ID_PERSONA|ID_EMPRESA|MONTO|FECHA",
+									"name": "ID_PERSONA",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ID_EMPRESA",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ID_EMPRESA",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "MONTO",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "MONTO",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "FECHA",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "FECHA",
 									"type": "String",
 									"physicalType": "String"
 								}
