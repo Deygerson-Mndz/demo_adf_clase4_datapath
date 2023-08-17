@@ -100,9 +100,34 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/deygerson_mendez@outlook.com/Transformación de Datos con Azure Databricks",
+					"baseParameters": {
+						"monto": {
+							"value": "@pipeline().parameters.monto",
+							"type": "Expression"
+						},
+						"id_empresa": {
+							"value": "@pipeline().parameters.id_empresa",
+							"type": "Expression"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "ls_ws_adb_democlase5",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
+		"parameters": {
+			"monto": {
+				"type": "string"
+			},
+			"id_empresa": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
